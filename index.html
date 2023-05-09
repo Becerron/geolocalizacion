@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalizacion</title>
+</head>
+<!--Diego Alonso Becerra Camacho-->
+<body> 
+  <div id="Contenido">
+    <h1>Distancia de tu ubicacion a la plaza machado: </h1>
+    <br><br><br>
+    <p id="Distancia"></p>
+
+
+    <script>
+      let positionx2=  (23.19849171656261);
+      let positiony2=(-106.42314472423162);
+      let positionx, positiony;
+      const x = document.getElementById("Distancia");
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      getLocation();
+      
+      function showPosition(position) {
+        
+        positionx=position.coords.latitude;
+        positiony=position.coords.longitude;
+
+        console.log(positionx)
+        console.log(positiony)
+        console.log("sep")
+        
+        Distancia();
+        
+      }
+      function Distancia(){
+        let d, a, b;
+        a=(positionx2-positionx);
+        b=(positiony2-positiony);
+
+        console.log(a)
+        console.log(b)
+        console.log("sep")
+
+        a= Math.pow(a, 2);
+        b= Math.pow(b, 2);
+
+        console.log(a)
+        console.log(b)
+        console.log("sep")
+
+        d=a+b;
+
+        d=Math.sqrt(d)
+        console.log(d)
+        console.log("sep")
+
+        d=(111.321*d)
+        console.log(d)
+        console.log("sep")
+
+        document.getElementById("Distancia").innerText= " La distancia entre tu y la plaza machado es de:  "+d+" kilometros"
+
+      }
+
+      
+    </script>
+
+  </div>
+
+      
+    
+</body>
+</html>

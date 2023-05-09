@@ -1,0 +1,18 @@
+body{
+    background-image: url("Captura.PNG");
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    font-size: 19px;
+}
+#Contenido{
+    margin-top: 7.5vh;
+    margin-left: 25vw;
+    background-color: aliceblue;
+    border-radius: 20px;
+    border: 1px solid;
+    width:50vw;
+    height: 85vh;
+
+}
